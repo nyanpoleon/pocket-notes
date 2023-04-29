@@ -1,0 +1,12 @@
+.mobile {
+  max-width: 767;
+  background-color: red;
+  color: black;
+  height: 100vh;
+}
+
+.notes-headimg {
+  background-color: aquamarine;
+  width: 100vw;
+  height: 100vh;
+}
