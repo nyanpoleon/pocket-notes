@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* for the mobile region */
 .mobile {
   max-width: 767;
   background-color: red;
@@ -10,3 +13,25 @@
   width: 100vw;
   height: 100vh;
 }
+
+
+
+/* for the desktop browsers */
+
+.screen {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.title-half {
+  width: 30vw;
+  height: 100vh;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+}
+
