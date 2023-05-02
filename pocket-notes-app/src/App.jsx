@@ -1,7 +1,8 @@
 import MediaQuery from "react-responsive";
 import "./App.css";
 import Standby from "./assets/standby.png";
-import Lock from "./assets/lock.png"
+import Lock from "./assets/lock.png";
+import Modal from "./components/Modal"
 
 function App() {
   return (
@@ -43,9 +44,14 @@ function App() {
               it will also contian, the create button,
               and the created notes with their title */}
             <div className="app-name">Pocket Notes</div>
-            <div className="create-btn-div">
+            {/* <div className="create-btn-div">
               <button className="createBtn">+ Create Notes group</button>
-            </div>
+            </div> */}
+            <Modal />
+            {/* <Popup className="modal">
+
+            </Popup> */}
+            
             <div className="notes-title-area">
               <>a prop will go here for the title</>
             </div>
@@ -60,9 +66,12 @@ function App() {
                 Send and receive messages without keeping your phone online. Use
                 Pocket Notes on up to 4 linked devices and 1 mobile phone
               </div>
-              
             </div>
-            <div className="encryption-text"> <img className="tiny-lock" src={Lock} alt="" /> end-to-end encrypted</div>
+            <div className="encryption-text">
+              {" "}
+              <img className="tiny-lock" src={Lock} alt="" /> end-to-end
+              encrypted
+            </div>
           </div>
         </div>
       </MediaQuery>
