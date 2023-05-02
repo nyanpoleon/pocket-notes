@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.create-btn-div {
+  text-align: left;
+  align-items: center;
+  
+}
+.createBtn {
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 3rem;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(189,189,189,0.9);
+}
+
+.modal-container {
+  position: fixed;
+  background-color: white;
+  max-width: 30rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

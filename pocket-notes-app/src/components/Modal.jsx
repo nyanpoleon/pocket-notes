@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import "./Modal.css";
 const Modal = () => {
   const [groupName, setGroupName] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -34,26 +35,34 @@ const Modal = () => {
         </div>
       </div>
       {showModal && (
-        <>
-          <div>
-            <div>Create New Notes</div>
-            <input
-              type="text"
-              placeholder="Enter your group name..."
-              value={groupName}
-              onChange={(event) => {
-                setGroupName(event.target.value);
-                if (groupName === "") setIsDisabled(false);
-                else setIsEnabled(true);
-              }}
-            />
-          </div>
-          <div>Choose Color</div>
-          {groupName == "" ? null : <button onClick={() => setShowModal(false)}>Create</button>} 
-          {groupName !== "" ? null : <button onClick={() => setShowModal(false)} disabled>Create</button>} 
-          {/* {groupName !== "" && (
+        <><div className="modal-wrapper"></div>
+          <div className="modal-container">
+            <div>
+              <div>Create New Notes</div>
+              <input
+                type="text"
+                placeholder="Enter your group name..."
+                value={groupName}
+                onChange={(event) => {
+                  setGroupName(event.target.value);
+                  if (groupName === "") setIsDisabled(false);
+                  else setIsEnabled(true);
+                }}
+              />
+            </div>
+            <div>Choose Color</div>
+            {groupName == "" ? null : (
+              <button onClick={() => setShowModal(false)}>Create</button>
+            )}
+            {groupName !== "" ? null : (
+              <button onClick={() => setShowModal(false)} disabled>
+                Create
+              </button>
+            )}
+            {/* {groupName !== "" && (
             <button onClick={() => setShowModal(false)}>Create</button>
           )}  */}
+          </div>
         </>
       )}
     </>
