@@ -2,7 +2,7 @@ import MediaQuery from "react-responsive";
 import "./App.css";
 import Standby from "./assets/standby.png";
 import Lock from "./assets/lock.png";
-import Modal from "./components/Modal"
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -51,7 +51,7 @@ function App() {
             {/* <Popup className="modal">
 
             </Popup> */}
-            
+
             <div className="notes-title-area">
               <>a prop will go here for the title</>
             </div>

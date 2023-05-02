@@ -35,11 +35,16 @@ const Modal = () => {
         </div>
       </div>
       {showModal && (
-        <><div className="modal-wrapper"></div>
+        <>
+          <div className="modal-wrapper"></div>
           <div className="modal-container">
             <div>
-              <div>Create New Notes</div>
-              <input
+              <div className="modal-header">Create New Notes</div>
+              <label className="modal-text" htmlFor="text">
+                Group Name
+              </label>
+              <input className="modal-input"
+                id="text"
                 type="text"
                 placeholder="Enter your group name..."
                 value={groupName}
@@ -50,12 +55,21 @@ const Modal = () => {
                 }}
               />
             </div>
-            <div>Choose Color</div>
+            <div className="modal-text">Choose Color</div>
             {groupName == "" ? null : (
-              <button onClick={() => setShowModal(false)}>Create</button>
+              <button
+                className="modal-create"
+                onClick={() => setShowModal(false)}
+              >
+                Create
+              </button>
             )}
             {groupName !== "" ? null : (
-              <button onClick={() => setShowModal(false)} disabled>
+              <button
+                className="modal-create"
+                onClick={() => setShowModal(false)}
+                disabled
+              >
                 Create
               </button>
             )}
