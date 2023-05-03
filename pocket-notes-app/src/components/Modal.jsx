@@ -1,10 +1,24 @@
 import React, { useState } from "react";
 import "../App.css";
 import "./Modal.css";
+
 const Modal = () => {
   const colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
   const [groupName, setGroupName] = useState("");
+  const [selectedColor, setSelectedColor] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+    console.log(`You selected ${color}`);
+  };
+
+  const handleCreateClick = () => {
+    const notesGroup = { groupName, selectedColor };
+    localStorage.setItem("notesGroup", JSON.stringify(notesGroup));
+    setShowModal(false);
+  };
+
   return (
     <>
       <div className="create-btn-div">
@@ -29,8 +43,6 @@ const Modal = () => {
                 value={groupName}
                 onChange={(event) => {
                   setGroupName(event.target.value);
-                  if (groupName === "") setIsDisabled(false);
-                  else setIsEnabled(true);
                 }}
               />
             </div>
@@ -38,30 +50,23 @@ const Modal = () => {
               <label htmlFor="color-btn">Choose Color </label>
               <div>
                 {colors.map((color) => (
-                  <button 
-                  id="color-btn"
-                  className="color-select"
-                  key={color}
-                  style={{backgroundColor: color}}
-                  onClick={() => console.log(`You selected ${color}`)}/>
+                  <button
+                    id="color-btn"
+                    className="color-select"
+                    key={color}
+                    style={{ backgroundColor: color }}
+                    onClick={() => handleColorClick(color)}
+                  />
                 ))}
               </div>
             </div>
 
-            {groupName == "" ? null : (
-              <button
-                className="modal-create"
-                onClick={() => setShowModal(false)}
-              >
+            {groupName == "" || selectedColor == null ? (
+              <button className="modal-create" disabled>
                 Create
               </button>
-            )}
-            {groupName !== "" ? null : (
-              <button
-                className="modal-create"
-                onClick={() => setShowModal(false)}
-                disabled
-              >
+            ) : (
+              <button className="modal-create" onClick={handleCreateClick}>
                 Create
               </button>
             )}
@@ -73,3 +78,4 @@ const Modal = () => {
 };
 
 export default Modal;
+
