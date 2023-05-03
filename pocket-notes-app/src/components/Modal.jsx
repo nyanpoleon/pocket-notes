@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../App.css";
 import "./Modal.css";
 const Modal = () => {
+  const colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
   const [groupName, setGroupName] = useState("");
   const [showModal, setShowModal] = useState(false);
   const CreateButton = () => {
@@ -43,7 +44,8 @@ const Modal = () => {
               <label className="modal-text" htmlFor="text">
                 Group Name
               </label>
-              <input className="modal-input"
+              <input
+                className="modal-input"
                 id="text"
                 type="text"
                 placeholder="Enter your group name..."
@@ -55,7 +57,20 @@ const Modal = () => {
                 }}
               />
             </div>
-            <div className="modal-text">Choose Color</div>
+            <div className="modal-text2">
+              <label htmlFor="color-btn">Choose Color </label>
+              <div id="color-btn">
+                {colors.map((color) => (
+                  <button 
+                  
+                  className="color-select"
+                  key={color}
+                  style={{backgroundColor: color}}
+                  onClick={() => console.log(`You selected ${color}`)}/>
+                ))}
+              </div>
+            </div>
+
             {groupName == "" ? null : (
               <button
                 className="modal-create"
