@@ -5,29 +5,6 @@ const Modal = () => {
   const colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
   const [groupName, setGroupName] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const CreateButton = () => {
-    return (
-      <>
-        <div>
-          <div>Create New Notes</div>
-          <input
-            type="text"
-            placeholder="Enter your group name..."
-            value={groupName}
-            onChange={(event) => {
-              setGroupName(event.target.value);
-              if (groupName === "") setIsDisabled(false);
-              else setIsEnabled(true);
-            }}
-          />
-        </div>
-        <div>Choose Color</div>
-        {groupName !== "" && (
-          <button onClick={() => setShowModal(false)}>Create</button>
-        )}
-      </>
-    );
-  };
   return (
     <>
       <div className="create-btn-div">
@@ -59,10 +36,10 @@ const Modal = () => {
             </div>
             <div className="modal-text2">
               <label htmlFor="color-btn">Choose Color </label>
-              <div id="color-btn">
+              <div>
                 {colors.map((color) => (
                   <button 
-                  
+                  id="color-btn"
                   className="color-select"
                   key={color}
                   style={{backgroundColor: color}}
@@ -88,9 +65,6 @@ const Modal = () => {
                 Create
               </button>
             )}
-            {/* {groupName !== "" && (
-            <button onClick={() => setShowModal(false)}>Create</button>
-          )}  */}
           </div>
         </>
       )}
