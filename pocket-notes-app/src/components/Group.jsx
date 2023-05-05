@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from "react";
-import "./Group.css"
+import "./Group.css";
+
 function Group() {
-  const [name, setName] = useState("");
-  const [initials, setInitials] = useState("");
+  const [groups, setGroups] = useState([]);
 
   useEffect(() => {
-    const storedName = localStorage.getItem("groupName");
-    if (storedName) {
-      setName(storedName);
-      // Split the name into words and get the first letter of each word
-      const nameWords = storedName.split(" ");
-      const firstLetters = nameWords.map((word) => word.charAt(0));
-      // Combine the first letters into a string and set as initials
-      const initialsValue = firstLetters.join("").toUpperCase();
-      setInitials(initialsValue);
-    }
+    const storedGroups = JSON.parse(localStorage.getItem("groups")) || [];
+    setGroups(storedGroups);
   }, []);
 
   return (
-    <div className="note-group">
-      <div
-        className="initial-logo"
-        style={{
-          backgroundColor: localStorage.getItem("selectedColor"),
-        }}
-      >
-        <div className="initial-text">{initials}</div>
-        
-      </div>
-      <div className="group-title">{name}</div>
+    <div>
+      {groups.map((group) => (
+        <div className="note-group" key={group.groupName}>
+          <div
+            className="initial-logo"
+            style={{
+              backgroundColor: group.selectedColor,
+            }}
+          >
+            <div className="initial-text">
+              {group.groupName
+                .split(" ")
+                .map((word) => word.charAt(0))
+                .join("")
+                .toUpperCase()}
+            </div>
+          </div>
+          <div className="group-title">{group.groupName}</div>
+        </div>
+      ))}
     </div>
   );
 }

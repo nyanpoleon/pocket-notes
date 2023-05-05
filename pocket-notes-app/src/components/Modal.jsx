@@ -3,7 +3,14 @@ import "../App.css";
 import "./Modal.css";
 
 const Modal = () => {
-  const colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
+  const colors = [
+    "#B38BFA",
+    "#FF79F2",
+    "#43E6FC",
+    "#F19576",
+    "#0047FF",
+    "#6691FF",
+  ];
   const [groupName, setGroupName] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -14,10 +21,13 @@ const Modal = () => {
   };
 
   const handleCreateClick = () => {
-    // const notesGroup = { groupName, selectedColor };
-    // localStorage.setItem("notesGroup", JSON.stringify(notesGroup));
-    localStorage.setItem("groupName", groupName);
-    localStorage.setItem("selectedColor", selectedColor);
+    const existingGroups = JSON.parse(localStorage.getItem("groups")) || [];
+    const newGroup = {
+      groupName,
+      selectedColor,
+    };
+    const updatedGroups = [...existingGroups, newGroup];
+    localStorage.setItem("groups", JSON.stringify(updatedGroups));
     setShowModal(false);
   };
 
@@ -80,4 +90,3 @@ const Modal = () => {
 };
 
 export default Modal;
-
