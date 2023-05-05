@@ -3,7 +3,7 @@ import "./App.css";
 import Standby from "./assets/standby.png";
 import Lock from "./assets/lock.png";
 import Modal from "./components/Modal";
-
+import Group from "./components/Group";
 function App() {
   return (
     <>
@@ -53,7 +53,8 @@ function App() {
             </Popup> */}
 
             <div className="notes-title-area">
-              <div></div>
+              <Group />
+              {/* <div></div>
               <div
                 className="note-group"
                 style={{
@@ -61,7 +62,7 @@ function App() {
                 }}
               >
                 {localStorage.getItem("groupName")}
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="notes-half">

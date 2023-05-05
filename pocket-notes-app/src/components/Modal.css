@@ -1,113 +1,114 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .create-btn-div {
-  text-align: left;
-  align-items: center;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 .createBtn {
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-  letter-spacing: 0.02em;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 3rem;
-  border: none;
-  background-color: black;
-  color: white;
+    height: 2.5rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 3rem;
+    border: none;
+    background-color: black;
+    color: white;
 }
 
 .modal-wrapper {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-container {
-  font-family: "Roboto";
-  font-weight: 500;
-  position: fixed;
-  background-color: white;
-  max-width: 30rem;
-  width: 30rem;
-  height: 14rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 6px;
+    font-family: "Roboto";
+    font-weight: 500;
+    position: fixed;
+    background-color: white;
+    max-width: 30rem;
+    width: 30rem;
+    height: 14rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
 }
 
 .modal-header {
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 160.19%;
-  /* or 46px */
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 160.19%;
+    /* or 46px */
 
-  letter-spacing: 0.035em;
+    letter-spacing: 0.035em;
 }
 
 .modal-text {
-  margin-top: 1rem;
-  margin-left: 2rem;
-  font-size: 1.2rem;
-  line-height: 160.19%;
-  /* identical to box height, or 44px */
-  padding-right: 2rem;
-  letter-spacing: 0.035em;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    line-height: 160.19%;
+    /* identical to box height, or 44px */
+    padding-right: 2rem;
+    letter-spacing: 0.035em;
 }
 
 .modal-input {
-  box-sizing: border-box;
-  border: 2px solid #cccccc;
-  border-radius: .5rem;
-  height: 1.8rem;
-  width: 16.5rem;
-  padding-left: 5px;
+    box-sizing: border-box;
+    border: 2px solid #cccccc;
+    border-radius: 0.5rem;
+    height: 1.8rem;
+    width: 16.5rem;
+    padding-left: 5px;
 }
 
 .modal-create {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
-  margin-top: 1rem;
-  background: #000000;
-  border-radius: 7px;
-  width: 7rem;
-  height: 1.6rem;
-  color: white;
-  font-size: 1.1rem;
+    position: absolute;
+    right: 0;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    background: #000000;
+    border-radius: 7px;
+    width: 7rem;
+    height: 1.6rem;
+    color: white;
+    font-size: 1.1rem;
 }
 
 .color-select {
-  margin-left: 1rem;
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-radius: 50%;
+    margin-left: 1rem;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
 }
 
 .modal-text2 {
-  display: flex;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  font-size: 1.2rem;
-  line-height: 160.19%;
-  /* identical to box height, or 44px */
-  padding-right: 2rem;
-  letter-spacing: 0.035em;
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    line-height: 160.19%;
+    /* identical to box height, or 44px */
+    padding-right: 2rem;
+    letter-spacing: 0.035em;
 }
-
