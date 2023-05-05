@@ -27,13 +27,14 @@
   flex-direction: row;
   overflow: hidden;
   overflow-y: hidden;
-  margin: 0;
+  margin-left: 1rem;
 }
 
 .title-half {
   
   width: 30vw;
   height: 100vh;
+  margin-right: 1rem;
   justify-content: center;
   text-align: left;
   align-items: center;

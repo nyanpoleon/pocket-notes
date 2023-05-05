@@ -14,8 +14,10 @@ const Modal = () => {
   };
 
   const handleCreateClick = () => {
-    const notesGroup = { groupName, selectedColor };
-    localStorage.setItem("notesGroup", JSON.stringify(notesGroup));
+    // const notesGroup = { groupName, selectedColor };
+    // localStorage.setItem("notesGroup", JSON.stringify(notesGroup));
+    localStorage.setItem("groupName", groupName);
+    localStorage.setItem("selectedColor", selectedColor);
     setShowModal(false);
   };
 

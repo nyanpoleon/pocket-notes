@@ -53,7 +53,15 @@ function App() {
             </Popup> */}
 
             <div className="notes-title-area">
-              <>a prop will go here for the title</>
+              <div></div>
+              <div
+                className="note-group"
+                style={{
+                  backgroundColor: localStorage.getItem("selectedColor"),
+                }}
+              >
+                {localStorage.getItem("groupName")}
+              </div>
             </div>
           </div>
           <div className="notes-half">
