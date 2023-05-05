@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./Group.css";
 
-function Group() {
-  const [groups, setGroups] = useState([]);
+function Group(props) {
+
 
   useEffect(() => {
     const storedGroups = JSON.parse(localStorage.getItem("groups")) || [];
-    setGroups(storedGroups);
+    props.setGroups(storedGroups);
   }, []);
 
   return (
     <div>
-      {groups.map((group) => (
+      {props.groups.map((group) => (
         <div className="note-group" key={group.groupName}>
           <div
             className="initial-logo"

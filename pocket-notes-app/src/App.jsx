@@ -1,72 +1,32 @@
+import React, { useState } from "react";
 import MediaQuery from "react-responsive";
 import "./App.css";
-import Standby from "./assets/standby.png";
-import Lock from "./assets/lock.png";
+// import Standby from "./assets/standby.png";
+// import Lock from "./assets/lock.png";
 import Modal from "./components/Modal";
 import Group from "./components/Group";
+import Notes from "./components/Notes";
 function App() {
+  const [showStandby, setShowStandby] = useState(false);
+  const [groups, setGroups] = useState([]);
   return (
     <>
-      <MediaQuery maxWidth={767}>
-        {/*<div className="mobile">
-          <div className="header">Pocket Notes</div>
-          <div className="create-button">
-            <button>+ Create Notes</button>
-          </div>
-          <div className="notes-heading">
-            <div className="title-half">
-              this area will contain the name of the app,
-              it will also contian, the create button,
-              and the created notes with their title 
-              <div className="app-name">Pocket Notes</div>
-              <div className="create-btn-div">
-                <button className="createBtn"></button>
-              </div>
-              
-            </div>
-            <div className="notes-half">
-              <div className="notes header">
-                <div className="empt-area">
-                  <div className="no-select-note-image">
-                    
-                  </div>
-                  <div>encryption text</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-      </MediaQuery>
+      <MediaQuery maxWidth={767}></MediaQuery>
       <MediaQuery minWidth={768}>
         <div className="screen">
           <div className="title-half">
-            {/* this area will contain the name of the app,
-              it will also contian, the create button,
-              and the created notes with their title */}
             <div className="app-name">Pocket Notes</div>
-            {/* <div className="create-btn-div">
-              <button className="createBtn">+ Create Notes group</button>
-            </div> */}
-            <Modal />
-            {/* <Popup className="modal">
 
-            </Popup> */}
+            <Modal groups={groups} setGroups={setGroups} />
 
             <div className="notes-title-area">
-              <Group />
-              {/* <div></div>
-              <div
-                className="note-group"
-                style={{
-                  backgroundColor: localStorage.getItem("selectedColor"),
-                }}
-              >
-                {localStorage.getItem("groupName")}
-              </div> */}
+              <Group groups={groups} setGroups={setGroups} />
             </div>
           </div>
+
           <div className="notes-half">
-            <div>
+            <Notes />
+            {/* <div>
               <div>
                 <img className="standby-image" src={Standby} alt="image" />
               </div>
@@ -80,7 +40,7 @@ function App() {
               {" "}
               <img className="tiny-lock" src={Lock} alt="" /> end-to-end
               encrypted
-            </div>
+            </div> */}
           </div>
         </div>
       </MediaQuery>

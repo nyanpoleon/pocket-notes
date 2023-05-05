@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../App.css";
 import "./Modal.css";
 
-const Modal = () => {
+const Modal = (props) => {
   const colors = [
     "#B38BFA",
     "#FF79F2",
@@ -27,6 +27,7 @@ const Modal = () => {
       selectedColor,
     };
     const updatedGroups = [...existingGroups, newGroup];
+    props.setGroups(updatedGroups)
     localStorage.setItem("groups", JSON.stringify(updatedGroups));
     setShowModal(false);
   };
