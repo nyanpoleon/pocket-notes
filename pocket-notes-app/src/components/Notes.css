@@ -45,3 +45,20 @@
   width: 13px;
   padding-right: 2px;
 }
+
+.parent-notes-area {
+  margin: 0 auto;
+  width: 70vw;
+  position: relative; 
+  height: 80vh;
+  background-color: red;
+}
+.notes-area-footer {
+  display: block;
+  background-color: #E8E8E8;
+  position: absolute;
+  bottom: -80px;
+  height: 30vh;
+  width: 100%;
+}
+

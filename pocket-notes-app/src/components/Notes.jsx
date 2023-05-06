@@ -29,12 +29,16 @@ function Notes() {
     return (
       <div>
         <div>Header will go here</div>
-        <div>
-            <div>Notes will display here
-                <div>the time and day will be here</div>
-                <div>the content will go here</div>
-            </div>
-            <div>the inpuy box will go here</div>
+        <div className="parent-notes-area">
+          <div>
+            Notes will display here
+            <div>the time and day will be here</div>
+            <div>the content will go here</div>
+          </div>
+          <div className="notes-area-footer">
+            the inpuy box will go here
+            <input type="text" />
+          </div>
         </div>
       </div>
     );
