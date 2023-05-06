@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Standby from "../assets/standby.png";
 import Lock from "../assets/lock.png";
+import Send from "../assets/send.svg";
 import "./Notes.css";
 
 function Notes() {
@@ -36,7 +37,27 @@ function Notes() {
             <div>the content will go here</div>
           </div>
           <div className="notes-area-footer">
-            <input type="text" />
+            <div className="textarea-wrapper">
+              <textarea
+                className="input-notes"
+                placeholder="Enter your text here..........."
+                type="text"
+              />
+              <button>
+                <svg
+                  width="35"
+                  height="29"
+                  viewBox="0 0 35 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 29V18.125L14.5 14.5L0 10.875V0L34.4375 14.5L0 29Z"
+                    fill="#ABABAB"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>

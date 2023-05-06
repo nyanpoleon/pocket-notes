@@ -64,15 +64,53 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  
 }
-
-input {
+.textarea-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.6rem;
+  border: 1px solid #cccccc;
+  height: 80%;
+  width: 95%;
+  background-color: white;
+}
+.input-notes {
   border: none;
   background-color: white;
   height: 80%;
   width: 95%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 35px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  vertical-align: top;
+  
+  border-radius: 0.6rem;
+}
+
+.input-notes::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 35px;
+  /* identical to box height */
+  letter-spacing: 0.02em;
+  color: #9a9a9a;
+  text-align: left;
+  text-indent: 5px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  position: "absolute";
+  bottom: "0";
+  right: "0";
 }
