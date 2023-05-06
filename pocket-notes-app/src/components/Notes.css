@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 .notes-half {
   display: flex;
@@ -49,16 +49,30 @@
 .parent-notes-area {
   margin: 0 auto;
   width: 70vw;
-  position: relative; 
+  position: relative;
   height: 80vh;
   background-color: red;
 }
 .notes-area-footer {
   display: block;
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
   position: absolute;
   bottom: -80px;
   height: 30vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  
 }
 
+input {
+  border: none;
+  background-color: white;
+  height: 80%;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

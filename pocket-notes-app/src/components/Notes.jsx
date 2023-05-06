@@ -36,7 +36,6 @@ function Notes() {
             <div>the content will go here</div>
           </div>
           <div className="notes-area-footer">
-            the inpuy box will go here
             <input type="text" />
           </div>
         </div>
