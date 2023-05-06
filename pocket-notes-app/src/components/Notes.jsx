@@ -36,14 +36,24 @@ function Notes() {
             <div>the time and day will be here</div>
             <div>the content will go here</div>
           </div>
+
           <div className="notes-area-footer">
-            <div className="textarea-wrapper">
+            <form
+              className="textarea-wrapper"
+              onSubmit={(event) => {
+                event.preventDefault(); // prevent default form submission behavior
+                const text = event.target.elements.textarea.value; // extract the value of the textarea
+                console.log(text); // do something with the text (e.g., send it to the server)
+                event.target.elements.textarea.value = ""; // clear the textarea
+              }}
+            >
               <textarea
+                id="textarea"
                 className="input-notes"
                 placeholder="Enter your text here..........."
                 type="text"
               />
-              <button>
+              <button type="submit">
                 <svg
                   width="35"
                   height="29"
@@ -57,7 +67,7 @@ function Notes() {
                   />
                 </svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
