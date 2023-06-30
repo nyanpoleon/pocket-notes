@@ -99,15 +99,13 @@
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 35px;
-  /* identical to box height */
-  letter-spacing: 0.02em;
+  
   color: #9a9a9a;
   text-align: left;
   text-indent: 5px;
 }
 
-input {
+button {
   background-color: white;
   border: none;
   position: "absolute";

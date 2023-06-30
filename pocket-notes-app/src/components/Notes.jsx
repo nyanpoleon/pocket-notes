@@ -4,8 +4,21 @@ import Lock from "../assets/lock.png";
 import Send from "../assets/send.svg";
 import "./Notes.css";
 
-function Notes() {
-  const [showStandby, setShowStandby] = useState(false);
+function Notes(props) {
+  const { showStandby } = props;
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes")) || []
+  );
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const text = event.target.elements.textarea.value;
+    const date = new Date().toLocaleString();
+    const note = { text, date };
+    setNotes([...notes, note]);
+    localStorage.setItem("notes", JSON.stringify([...notes, note]));
+    event.target.elements.textarea.value = "";
+  };
 
   if (showStandby) {
     return (
@@ -31,27 +44,30 @@ function Notes() {
       <div>
         <div>Header will go here</div>
         <div className="parent-notes-area">
-          <div>
-            Notes will display here
-            <div>the time and day will be here</div>
-            <div>the content will go here</div>
-          </div>
-
+          {notes.map((note) => (
+            <div key={note.date}>
+              <div>{note.date}</div>
+              <div>{note.text}</div>
+            </div>
+          ))}
           <div className="notes-area-footer">
-            <form
-              className="textarea-wrapper"
-              onSubmit={(event) => {
-                event.preventDefault(); // prevent default form submission behavior
-                const text = event.target.elements.textarea.value; // extract the value of the textarea
-                console.log(text); // do something with the text (e.g., send it to the server)
-                event.target.elements.textarea.value = ""; // clear the textarea
-              }}
-            >
+            <form className="textarea-wrapper" onSubmit={handleSubmit}>
               <textarea
                 id="textarea"
                 className="input-notes"
                 placeholder="Enter your text here..........."
                 type="text"
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    event.preventDefault();
+                    const form = event.currentTarget.form;
+                    if (form) {
+                      form.dispatchEvent(
+                        new Event("submit", { cancelable: true })
+                      );
+                    }
+                  }
+                }}
               />
               <button type="submit">
                 <svg
